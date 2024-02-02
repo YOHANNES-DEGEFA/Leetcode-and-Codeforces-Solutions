@@ -1,3 +1,4 @@
+
 class Solution:
     def countCompleteSubarrays(self, nums: List[int]) -> int:
         hashMap, unique_elem = defaultdict(int), len(set(nums))
@@ -13,34 +14,3 @@ class Solution:
             ans += l 
         return ans 
 
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # setLen= len(set(nums))
-        # N = len(nums)
-        # res = 0
-        # l, r = 0, 0
-        # for i in range(N):
-        #     tempSet = set(nums[i])
-        #     for j in range(i+1,N):
-        #         if len(tempSet) == setLen:
-        #             res += 1
-
-        #         tempSet.add(nums[j])
-
-        #         if j == 
-
-        
