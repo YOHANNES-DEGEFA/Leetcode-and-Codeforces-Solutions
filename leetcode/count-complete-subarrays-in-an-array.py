@@ -1,16 +1,21 @@
-
 class Solution:
     def countCompleteSubarrays(self, nums: List[int]) -> int:
-        hashMap, unique_elem = defaultdict(int), len(set(nums))
-        ans, l = 0, 0 
-        for r in range(len(nums)):
-            hashMap[nums[r]] += 1 
-            while len(hashMap) == unique_elem:
-                hashMap[nums[l]] -= 1 
-                if not hashMap[nums[l]]:  # if it is zero
-                    del hashMap[nums[l]]
-                l += 1
 
-            ans += l 
-        return ans 
+        need = len(set(nums))
+        unique = defaultdict(int)
+        res = 0 
 
+        l = 0 
+        for n in nums: 
+            unique[n] += 1 
+
+            while len(unique) >= need: 
+                unique[nums[l]] -= 1 
+                if unique[nums[l]] == 0: 
+                    del unique[nums[l]]
+
+                l += 1 
+            
+            res += l 
+
+        return res 
