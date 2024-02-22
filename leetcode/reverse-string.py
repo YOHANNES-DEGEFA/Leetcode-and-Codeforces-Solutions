@@ -3,12 +3,14 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        n = len(s)
-        l, r = 0, n-1
-        while l < r: 
-            s[l], s[r] = s[r], s[l]
-            l += 1 
-            r -= 1 
+        def f(s,l,r): 
 
+            if r <= l: 
+                return 
+            s[r], s[l] = s[l], s[r]
+
+            return f(s,l+1,r-1)
+
+        f(s,0,len(s)-1)
         
-        
+            
