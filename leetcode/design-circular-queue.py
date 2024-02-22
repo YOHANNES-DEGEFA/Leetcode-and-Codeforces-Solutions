@@ -7,19 +7,19 @@ class Node:
 class MyCircularQueue:
 
     def __init__(self, k: int):
-        # dummy node for head
+       
         self.head = Node(0)
         self.rear = self.head
         self.k = k
         self.size = 0
 
     def enQueue(self, value: int) -> bool:
-        # check size
-        if self.size == self.k: # full now 
+       
+        if self.size == self.k:
             return False
         else:
             node = Node(value)
-            # add to rear
+            
             self.rear.next = node
             self.rear = node
             self.size += 1
@@ -29,8 +29,7 @@ class MyCircularQueue:
     def deQueue(self) -> bool:
         if self.size == 0:
             return False
-        else: # has some element
-            # one element case
+        else: 
             if self.head.next.next is None:
                 self.rear = self.head
 
@@ -71,12 +70,3 @@ class MyCircularQueue:
 # param_6 = obj.isFull()
 
 
-
-# Your MyCircularQueue object will be instantiated and called as such:
-# obj = MyCircularQueue(k)
-# param_1 = obj.enQueue(value)
-# param_2 = obj.deQueue()
-# param_3 = obj.Front()
-# param_4 = obj.Rear()
-# param_5 = obj.isEmpty()
-# param_6 = obj.isFull()
