@@ -6,7 +6,6 @@ class Solution:
         for i, num in enumerate(nums):
             if num == 0:
                 continue
-
             slow = i
             fast = move(i)
 
@@ -21,7 +20,6 @@ class Solution:
                 fast = move(move(fast))
 
             add = i
-
             while nums[add] * nums[move(add)] > 0:
                 
                 tmp = add
